@@ -16,7 +16,8 @@ export default function Signup() {
         numberOfEmployees: ''
     })
 
-    const [image, setImage] = useState("");
+    // const [image, setImage] = useState("");
+    // const [loading, setLoading] = useState(false)
 
     const [visible, setVisible] = useState("false");
     const [confirmVisible, setConfirmVisible] = useState("false");
@@ -32,12 +33,15 @@ export default function Signup() {
         });
     }
 
-    const handleImageChange = (event) => {
-        const file = event.target.file[0];
-        console.log(file)
+    // const postDetails = (pics) => {
+    //     setLoading(true);
+    //     if (pics === undefined) {
+    //         alert("please select an image")
+    //         return;
+    //     }
 
-        setImage(event.target.file[0])
-    };
+
+    // };
     const register = (e) => {
         e.preventDefault();
         const { firstName, lastName, email, password, confirmPassword, companyName, phoneNumber, numberOfEmployees } = user;
@@ -97,10 +101,10 @@ export default function Signup() {
                                 </div>
                             </div>
                         </div>
-                        <div className='xs: flex-col md:flex md:flex-row gap-3 xs: mb-0 md:mb-3 justify-left items-center'>
-                            <div><input type="file" className=' xs: mb-3 xs: w-full xs: h-[35px]  md:w-[180px] lg:w-[280px] md:h-[30px]  lg:h-[48px] rounded-md border-[#EAEAEA] border-[1px] px-5 text-gray-400' placeholder='Upload Image' onChange={handleImageChange}
+                        {/* <div className='xs: flex-col md:flex md:flex-row gap-3 xs: mb-0 md:mb-3 justify-left items-center'>
+                            <div><input type="file" className=' xs: mb-3 xs: w-full xs: h-[35px]  md:w-[180px] lg:w-[280px] md:h-[30px]  lg:h-[48px] rounded-md border-[#EAEAEA] border-[1px] px-5 text-gray-400' placeholder='Upload Image' onChange={(e) => { postDetails(e.target.files[0]) }}
                                 name='file' /></div>
-                        </div>
+                        </div> */}
 
                         <p className=' xs: text-center font-poppins text-[14px] font-normal leading-[19.6px] text-[#5F667E] mb-4 md:text-center lg:text-left'>By clicking sign up, you agree to our Terms, Data Policy and Cookies Policy.</p>
 
